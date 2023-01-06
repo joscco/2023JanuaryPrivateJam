@@ -5,11 +5,11 @@ using UnityEngine;
 public class VisionRadius : MonoBehaviour
 {
 
-    
+    public List<GameObject> enemyInSight  = new List<GameObject>(); 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log('x');
+
     }
 
     // Update is called once per frame
@@ -18,12 +18,27 @@ public class VisionRadius : MonoBehaviour
         
     }
 
-    void OnCollision2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("hit something");
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("hit enemy");
+            collision.gameObject.GetComponent<EnemyStats>().health -= 1;
+            enemyInSight.Add(collision.gameObject);
+        }
+    
+    }
+
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("lost something");
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("lost enemy");
+            collision.gameObject.GetComponent<EnemyStats>().health -= 1;
+            enemyInSight.Remove(collision.gameObject);
         }
     
     }

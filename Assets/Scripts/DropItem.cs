@@ -9,7 +9,7 @@ public class DropItem : MonoBehaviour
 
     public GameObject[] items = new GameObject[3];
 
-    void drop()
+    public void drop()
     {
         Vector3 position = transform.position;
         foreach (GameObject item in items)
