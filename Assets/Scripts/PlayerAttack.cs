@@ -8,6 +8,9 @@ public class PlayerAttack : MonoBehaviour
     public float attack = 1;
     public float attackspeed = 1;
 
+    public List<GameObject> weapons;
+    List<Vector3> weaponPositions = new List<Vector3>();
+
     bool canAttack = true;
 
 
@@ -16,6 +19,12 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         _visionRadius = GetComponentInChildren<VisionRadius>();
+        
+        for(int i = 0; i<weapons.Count;i++)
+        {
+            weaponPositions.Add( new Vector3(0,0,0) );
+        }
+
     }
 
     // Update is called once per frame
@@ -32,10 +41,29 @@ public class PlayerAttack : MonoBehaviour
     void Attack(GameObject enemy)
     {
         enemy.GetComponent<EnemyStats>().health -= attack;
+        SaveWeaponPositions();
+
+        for(int i = 0; i<weapons.Count;i++)
+        {
+                weapons[i].GetComponent<Transform>().position = enemy.GetComponent<Transform>().position;
+        }
     }
 
     void Rearm()
     {
        canAttack = true;
+
+        for(int i = 0; i<weapons.Count;i++)
+        {
+                weapons[i].GetComponent<Transform>().position = weaponPositions[i];
+        }
+    }
+
+    void SaveWeaponPositions()
+    {
+        for(int i = 0; i<weapons.Count;i++)
+        {
+            weaponPositions[i] = weapons[i].GetComponent<Transform>().position;
+        }
     }
 }
