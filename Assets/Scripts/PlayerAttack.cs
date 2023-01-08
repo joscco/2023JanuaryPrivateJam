@@ -8,8 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public float attack = 1;
     public float attackspeed = 1;
 
-    public List<GameObject> weapons;
-    List<Vector3> weaponPositions = new List<Vector3>();
+    public List<Weapon> weapons;
 
     bool canAttack = true;
 
@@ -19,11 +18,6 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         _visionRadius = GetComponentInChildren<VisionRadius>();
-        
-        for(int i = 0; i<weapons.Count;i++)
-        {
-            weaponPositions.Add( new Vector3(0,0,0) );
-        }
 
     }
 
@@ -33,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
         if(_visionRadius.enemyInSight.Count > 0 && canAttack)
         {
             canAttack = false;
-            Invoke("Rearm",2);
+            Invoke("Rearm",attackspeed);
             Attack(_visionRadius.enemyInSight[0]);
         }
     }
@@ -41,7 +35,6 @@ public class PlayerAttack : MonoBehaviour
     void Attack(GameObject enemy)
     {
         enemy.GetComponent<EnemyStats>().health -= attack;
-        SaveWeaponPositions();
 
         for(int i = 0; i<weapons.Count;i++)
         {
@@ -55,15 +48,7 @@ public class PlayerAttack : MonoBehaviour
 
         for(int i = 0; i<weapons.Count;i++)
         {
-                weapons[i].GetComponent<Transform>().position = weaponPositions[i];
-        }
-    }
-
-    void SaveWeaponPositions()
-    {
-        for(int i = 0; i<weapons.Count;i++)
-        {
-            weaponPositions[i] = weapons[i].GetComponent<Transform>().position;
+                weapons[i].GetComponent<Transform>().position = transform.position + weapons[i].idlePosition;
         }
     }
 }

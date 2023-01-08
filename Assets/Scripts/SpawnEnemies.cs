@@ -42,7 +42,7 @@ public class SpawnEnemies : MonoBehaviour
         if(spawned)
         {
             spawned = false;
-            Invoke("spawnMore",5);
+            Invoke("spawnMore",10);
         }
     }
 
