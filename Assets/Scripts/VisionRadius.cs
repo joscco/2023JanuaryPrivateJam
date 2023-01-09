@@ -27,6 +27,16 @@ public class VisionRadius : MonoBehaviour
             collision.gameObject.GetComponent<EnemyStats>().health -= 1;
             enemyInSight.Add(collision.gameObject);
         }
+
+        if (collision.gameObject.tag == "Honey")
+        {
+            if(collision.gameObject.GetComponent<Honey>())
+            {
+                Debug.Log("Found Honey");
+                collision.gameObject.GetComponent<Honey>().Effect();
+            }
+
+        }
     
     }
 
