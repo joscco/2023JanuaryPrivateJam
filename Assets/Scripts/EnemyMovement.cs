@@ -7,11 +7,8 @@ public class EnemyMovement : MonoBehaviour
     
     [SerializeField]
     private float movementSpeed = 1;
-
     private Transform playerTF;
 
-
- 
     private void Awake()
     {
         playerTF = GameObject.Find("Player").GetComponent<Transform>();
