@@ -292,6 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 820648269}
   - component: {fileID: 820648268}
+  - component: {fileID: 820648270}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -340,13 +341,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 39ef1096af2e1954aada70a6b1e82b6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 537e52006296345a48d3d35d3e72db43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 10, y: 10}
-  m_AdaptiveModeThreshold: 0.5
+  m_DrawMode: 2
+  m_Size: {x: 30, y: 15}
+  m_AdaptiveModeThreshold: 0
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
@@ -366,6 +367,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820648270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820648267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ca0b083eefb41e0b29ca3d3ce41c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldDecorationSprites:
+  - {fileID: 21300000, guid: d74c6c83f4c974054865801b1fad040d, type: 3}
+  - {fileID: 21300000, guid: 93def3609c61648119da60421c638cdf, type: 3}
+  - {fileID: 21300000, guid: 23d82df7e566746a1beb1ce3267a5609, type: 3}
+  - {fileID: 21300000, guid: 54fad91f7bd8b46a7a9838ee2b61508b, type: 3}
+  - {fileID: 21300000, guid: c8f438041afd1421e89a6a68e5480fb6, type: 3}
+  - {fileID: 21300000, guid: ce0c1f249bb284af39056cc77e43b895, type: 3}
+  numberOfDecorations: 100
+  width: 30
+  height: 15
 --- !u!4 &1845413071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5492325237485937363, guid: 9c67ebef134302749ac4277a0627fc65, type: 3}
@@ -400,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea82685efb38e24ebcbdeaf887d98f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 820648268}
+  gameField: {fileID: 820648270}
   enemy: {fileID: 9212844413203132122, guid: 3f0ecdced7cb353408e79cc9105e5d24, type: 3}
   mobCount: 3
 --- !u!4 &2036266935
@@ -429,6 +452,10 @@ PrefabInstance:
       propertyPath: attackspeed
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5492325237485937360, guid: 9c67ebef134302749ac4277a0627fc65, type: 3}
+      propertyPath: gameField
+      value: 
+      objectReference: {fileID: 820648270}
     - target: {fileID: 5492325237485937360, guid: 9c67ebef134302749ac4277a0627fc65, type: 3}
       propertyPath: background
       value: 
