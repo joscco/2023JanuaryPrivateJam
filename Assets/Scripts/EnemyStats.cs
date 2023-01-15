@@ -26,7 +26,7 @@ public class EnemyStats : MonoBehaviour
         {
             alive = false;
             _dropItem.drop();
-            Invoke("Die",.1f);
+           Die();
         }
     }
 

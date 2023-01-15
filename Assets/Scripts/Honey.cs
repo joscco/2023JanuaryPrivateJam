@@ -22,7 +22,7 @@ public class Honey : MonoBehaviour
     public void Effect()
     {
         playerItems.xp += xpGain;
-        Invoke("Vanish",.1f);
+        Vanish();
     }
 
     void Vanish()

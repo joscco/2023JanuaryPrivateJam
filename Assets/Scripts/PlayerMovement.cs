@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
  
         Vector2 adjustedMovement = movement * movementSpeed;
  
-        Vector2 newPos = currentPos + adjustedMovement * Time.fixedDeltaTime;
+        Vector2 newPos = currentPos + adjustedMovement * Time.deltaTime;
 
         _playerRigidbody.MovePosition(newPos);
        // tf.Translate(hor,vert,0);
