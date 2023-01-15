@@ -19,21 +19,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() 
     {
-
         float vert = Input.GetAxis("Vertical");
         float hor = Input.GetAxis("Horizontal");
         
         Vector2 movement = new Vector2(hor,vert);
 
-        Vector2 currentPos = _playerRigidbody.position;
+        Vector2 currentPos = transform.position;
  
         Vector2 adjustedMovement = movement * movementSpeed;
  
-        Vector2 newPos = currentPos + adjustedMovement * Time.deltaTime;
-
+        Vector2 newPos = currentPos + adjustedMovement;
+        newPos = gameField.ClampToField(newPos);
         _playerRigidbody.MovePosition(newPos);
-       // tf.Translate(hor,vert,0);
-
-       transform.position = gameField.ClampToField(transform.position);
     }
 }

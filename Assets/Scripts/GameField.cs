@@ -12,28 +12,28 @@ public class GameField : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
     private List<GameObject> _fieldDecorations = new List<GameObject>();
+    private float[] _bounds;
 
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-
+        _bounds = SpriteUtils.GetBounds(_spriteRenderer);
+        
         SetSize();
         SprinkleDecoration();
     }
 
     public Vector2 GetRandomFieldPosition()
     {
-        float[] bounds = SpriteUtils.GetBounds(_spriteRenderer);
-        float randX = Random.Range(bounds[0], bounds[1]);
-        float randY = Random.Range(bounds[2], bounds[3]);
+        float randX = Random.Range(_bounds[0], _bounds[1]);
+        float randY = Random.Range(_bounds[2], _bounds[3]);
         return new Vector2(randX, randY);
     }
     
     public Vector2 ClampToField(Vector2 position)
     {
-        float[] bounds = SpriteUtils.GetBounds(_spriteRenderer);
-        float newX = Math.Clamp(position.x, bounds[0], bounds[1]);
-        float newY = Math.Clamp(position.y, bounds[2], bounds[3]);
+        float newX = Math.Clamp(position.x, _bounds[0], _bounds[1]);
+        float newY = Math.Clamp(position.y, _bounds[2], _bounds[3]);
         return new Vector2(newX, newY);
     }
 

@@ -460,6 +460,10 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 820648268}
+    - target: {fileID: 5492325237485937360, guid: 9c67ebef134302749ac4277a0627fc65, type: 3}
+      propertyPath: movementSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5492325237485937363, guid: 9c67ebef134302749ac4277a0627fc65, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -536,6 +540,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9212844413203132121, guid: 3f0ecdced7cb353408e79cc9105e5d24, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1845413071}
     - target: {fileID: 9212844413203132122, guid: 3f0ecdced7cb353408e79cc9105e5d24, type: 3}
       propertyPath: m_Name
       value: Enemy
