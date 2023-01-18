@@ -1645,6 +1645,7 @@ GameObject:
   - component: {fileID: 1826500308}
   - component: {fileID: 1826500307}
   - component: {fileID: 1826500306}
+  - component: {fileID: 1826500310}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1737,6 +1738,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1826500310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826500305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcdb2d4eb77b44004870f9d09b545323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startAnimationFinished: 0
+  initialOffsetY: 1000
+  initialDelayInSeconds: 1
+  delayPerLetterInSeconds: 0.1
+  moveTimePerLetterInSeconds: 0.8
+  letters:
+  - {fileID: 700904658}
+  - {fileID: 1564202904}
+  - {fileID: 1607988685}
+  - {fileID: 259406088}
+  - {fileID: 1250415068}
+  - {fileID: 173082600}
+  - {fileID: 2094371975}
+  - {fileID: 400182721}
+  - {fileID: 433797567}
+  buttons:
+  - {fileID: 986324656}
+  - {fileID: 1510815919}
 --- !u!1 &1856513235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +1921,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2137297022}
-  - component: {fileID: 2137297023}
   m_Layer: 5
   m_Name: Letters
   m_TagString: Untagged
@@ -1927,29 +1957,3 @@ RectTransform:
   m_AnchoredPosition: {x: 21.5, y: 99.75}
   m_SizeDelta: {x: 909, y: 547.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2137297023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137297021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcdb2d4eb77b44004870f9d09b545323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialOffsetY: 1000
-  initialDelayInSeconds: 1.5
-  delayPerLetterInSeconds: 0.1
-  moveTimePerLetterInSeconds: 1
-  letters:
-  - {fileID: 700904660}
-  - {fileID: 1564202906}
-  - {fileID: 1607988687}
-  - {fileID: 259406090}
-  - {fileID: 1250415070}
-  - {fileID: 173082602}
-  - {fileID: 2094371977}
-  - {fileID: 400182723}
-  - {fileID: 433797569}
