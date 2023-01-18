@@ -17,7 +17,7 @@ public class GameField : MonoBehaviour
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _bounds = SpriteUtils.GetBounds(_spriteRenderer);
+        _bounds = SpriteUtils.GetRendererBounds(_spriteRenderer);
         
         SetSize();
         SprinkleDecoration();

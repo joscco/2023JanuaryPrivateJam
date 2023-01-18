@@ -154,11 +154,11 @@ RectTransform:
   - {fileID: 986324657}
   - {fileID: 1510815920}
   m_Father: {fileID: 1826500309}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -330}
+  m_AnchoredPosition: {x: 0, y: -327}
   m_SizeDelta: {x: 294, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &81032618
@@ -356,7 +356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -325.5, y: -134.75}
+  m_AnchoredPosition: {x: -279, y: -134.75}
   m_SizeDelta: {x: 194, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &173082602
@@ -508,7 +508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.5, y: -134.75}
+  m_AnchoredPosition: {x: 79, y: -134.75}
   m_SizeDelta: {x: 211, y: 261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400182723
@@ -584,7 +584,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 251.5, y: -134.75}
+  m_AnchoredPosition: {x: 256, y: -134.75}
   m_SizeDelta: {x: 208, y: 262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433797569
@@ -830,7 +830,6 @@ GameObject:
   - component: {fileID: 986324659}
   - component: {fileID: 986324658}
   - component: {fileID: 986324661}
-  - component: {fileID: 986324662}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -855,7 +854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 72}
+  m_AnchoredPosition: {x: 0, y: 58}
   m_SizeDelta: {x: 294, y: 101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986324658
@@ -949,54 +948,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 986324656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ccd9bc310b846f59a11b5ab5749731, type: 3}
+  m_Script: {fileID: 11500000, guid: 16357c0ac0874db2a3ebef2633aaf019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &986324662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986324656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 986324661}
-          m_TargetAssemblyTypeName: ScalingButton, Assembly-CSharp
-          m_MethodName: OnPointerEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 986324661}
-          m_TargetAssemblyTypeName: ScalingButton, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  nextScene: GameScene
 --- !u!1 &1250415068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1193,6 @@ GameObject:
   - component: {fileID: 1510815924}
   - component: {fileID: 1510815923}
   - component: {fileID: 1510815922}
-  - component: {fileID: 1510815921}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -1263,54 +1217,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -72}
+  m_AnchoredPosition: {x: 0, y: -67}
   m_SizeDelta: {x: 294, y: 101}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1510815921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510815919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1510815922}
-          m_TargetAssemblyTypeName: ScalingButton, Assembly-CSharp
-          m_MethodName: OnPointerEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1510815922}
-          m_TargetAssemblyTypeName: ScalingButton, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1510815922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1727,8 +1636,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1400619636}
-  - {fileID: 53875263}
   - {fileID: 2137297022}
+  - {fileID: 53875263}
   - {fileID: 566213472}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1871,7 +1780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -134.5, y: -140.75}
+  m_AnchoredPosition: {x: -103, y: -140.75}
   m_SizeDelta: {x: 186, y: 266}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2094371977
@@ -1950,10 +1859,10 @@ RectTransform:
   - {fileID: 400182722}
   - {fileID: 433797568}
   m_Father: {fileID: 1826500309}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.5, y: 99.75}
+  m_AnchoredPosition: {x: 0, y: 114}
   m_SizeDelta: {x: 909, y: 547.5}
   m_Pivot: {x: 0.5, y: 0.5}

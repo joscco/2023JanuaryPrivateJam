@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class SpriteUtils
 {
-    public static float[] GetBounds(Renderer renderer)
+    public static float[] GetRendererBounds(Renderer renderer)
     {
         var bounds = renderer.bounds;
         float minX = bounds.min.x;

@@ -5,7 +5,8 @@ public class SpawnEnemies : MonoBehaviour
     public GameField gameField;
     public GameObject enemy;
     public int mobCount = 3;
-    bool _spawned = true;
+    public float spawningOffsetInSeconds = 10f;
+    bool _justSpawned = true;
 
     void Start()
     {
@@ -14,11 +15,10 @@ public class SpawnEnemies : MonoBehaviour
             Instantiate(enemy, gameField.GetRandomFieldPosition(), Quaternion.identity);
         }
     }
-
-
+    
     void SpawnMore()
     {
-        _spawned = true;
+        _justSpawned = true;
         mobCount += 1;
         for (int i = 0; i < mobCount; i++)
         {
@@ -28,10 +28,10 @@ public class SpawnEnemies : MonoBehaviour
 
     void Update()
     {
-        if(_spawned)
+        if(_justSpawned)
         {
-            _spawned = false;
-            Invoke("SpawnMore",10);
+            _justSpawned = false;
+            Invoke("SpawnMore", spawningOffsetInSeconds);
         }
     }
 }

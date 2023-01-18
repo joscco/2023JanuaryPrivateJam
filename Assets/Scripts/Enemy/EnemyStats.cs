@@ -13,25 +13,23 @@ public class EnemyStats : MonoBehaviour
 
     bool alive = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         _dropItem = GetComponent<DropItem>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(health < 0 && alive)
         {
             alive = false;
-            _dropItem.drop();
+            _dropItem.Drop();
            Die();
         }
     }
 
     void Die()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
