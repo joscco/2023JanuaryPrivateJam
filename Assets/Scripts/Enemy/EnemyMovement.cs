@@ -25,6 +25,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void SwapFacingDirectionIfNeeded(float verticalDistanceToPlayer)
     {
-        _renderer.flipX = verticalDistanceToPlayer < 0;
+        _renderer.transform.localScale = new Vector3(verticalDistanceToPlayer < 0 ? -1 : 1, 1, 0);
     }
 }
