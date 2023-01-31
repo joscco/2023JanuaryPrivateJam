@@ -9,7 +9,6 @@ public class VisionRadius : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyStats>().health -= 1;
             enemyInSight.Add(collision.gameObject);
         }
 
@@ -18,7 +17,7 @@ public class VisionRadius : MonoBehaviour
             Honey honey = collision.gameObject.GetComponent<Honey>();
             if (honey)
             {
-                honey.Effect();
+                honey.TriggerEffect();
             }
         }
     }
@@ -27,7 +26,6 @@ public class VisionRadius : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyStats>().health -= 1;
             enemyInSight.Remove(collision.gameObject);
         }
     }

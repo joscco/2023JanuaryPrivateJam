@@ -1,15 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public float attack = 1;
-    public float attackSpeed = 1;
+    public float attack = 0.1f;
+    
+    public List<GameObject> weapons;
 
-    public List<Weapon> weapons;
-
-    bool _canAttack = true;
     VisionRadius _visionRadius;
 
     void Start()
@@ -19,31 +16,39 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (_visionRadius.enemyInSight.Count > 0 && _canAttack)
+        if (_visionRadius.enemyInSight.Count > 0)
         {
-            _canAttack = false;
-            Invoke("ReArm", attackSpeed);
+            TurnAllWeaponsTowardsEnemy(_visionRadius.enemyInSight[0]);
             Attack(_visionRadius.enemyInSight[0]);
+        }
+    }
+
+    private void TurnAllWeaponsTowardsEnemy(GameObject enemy)
+    {
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            TurnWeaponTowardsEnemy(weapons[0], enemy);
         }
     }
 
     void Attack(GameObject enemy)
     {
-        enemy.GetComponent<EnemyStats>().health -= attack;
-
-        for (int i = 0; i < weapons.Count; i++)
+        var enemyStats = enemy.GetComponent<EnemyStats>();
+        enemyStats.health -= attack;
+        
+        // This is a very intertwined logic
+        if (enemyStats.health <= 0)
         {
-            weapons[i].transform.position = enemy.transform.position;
+            _visionRadius.enemyInSight.Remove(enemy);
         }
     }
 
-    void ReArm()
+    void TurnWeaponTowardsEnemy(GameObject weapon, GameObject enemy)
     {
-        _canAttack = true;
-
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            weapons[i].transform.position = transform.position + weapons[i].idlePosition;
-        }
+        Transform weaponTransform = weapon.transform;
+        Vector3 aimDirection = (enemy.transform.position - weaponTransform.position).normalized;
+        float currentAngle = weaponTransform.eulerAngles.z;
+        float aimAngle = Mathf.Acos(Vector3.Dot(Vector3.right, aimDirection)) * Mathf.Rad2Deg;
+        weaponTransform.eulerAngles = new Vector3(0, 0, Mathf.Lerp(currentAngle, aimAngle, 0.1f));
     }
 }
