@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
     {
         for (int i = 0; i < weapons.Count; i++)
         {
-            TurnWeaponTowardsEnemy(weapons[0], enemy);
+            TurnWeaponTowardsEnemy(weapons[i], enemy);
         }
     }
 
